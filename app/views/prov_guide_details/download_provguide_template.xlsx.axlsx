@@ -1,0 +1,15 @@
+col_widths= [20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20] 
+wb = xlsx_package.workbook
+wb.use_autowidth = true
+wb.styles do |style|
+  highlight_cell = style.add_style(bg_color: "EFC376",
+                                   border: Axlsx::STYLE_THIN_BORDER,
+                                   alignment: { horizontal: :center })
+
+  wb.add_worksheet(name: "Prov_Guide_Details") do |sheet|
+    
+
+    sheet.add_row ["dialplan", "clli", "NPA","RateCenter","Locality","county","Sub_profile_id","VMA","Division_id","reference1","serviceable","tgn_911","state","suspend_id","vma_customer","routing_indicator_rule","poi","vma_99","lrn","seasonal_id","i2","esrn","lata","spid","nat_num_esrn"],:style=>[highlight_cell,highlight_cell,highlight_cell,highlight_cell,highlight_cell,highlight_cell,highlight_cell,highlight_cell,highlight_cell,highlight_cell,highlight_cell,highlight_cell,highlight_cell,highlight_cell,highlight_cell,highlight_cell,highlight_cell,highlight_cell,highlight_cell,highlight_cell,highlight_cell,highlight_cell,highlight_cell,highlight_cell,highlight_cell]
+    sheet.column_widths *col_widths
+	end
+end
