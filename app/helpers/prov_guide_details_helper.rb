@@ -1,0 +1,2 @@
+module ProvGuideDetailsHelper
+end

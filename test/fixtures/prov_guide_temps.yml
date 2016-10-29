@@ -1,0 +1,59 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  dialplan: MyString
+  clli: MyString
+  npa: MyString
+  rate_center: MyString
+  locality: MyString
+  county: MyString
+  sub_profile_id: MyString
+  vma: MyString
+  created_by: MyString
+  last_update_by: MyString
+  division_id: MyString
+  reference1: MyString
+  serviceable: MyString
+  tgn_911: MyString
+  state: MyString
+  suspend_id: MyString
+  vma_customer: MyString
+  routing_indicator_rule: MyString
+  poi: MyString
+  vma_99: MyString
+  lrn: MyString
+  seasonal_id: MyString
+  i2: MyString
+  esrn: MyString
+  lata: MyString
+  spid: MyString
+  nat_num_esrn: MyString
+
+two:
+  dialplan: MyString
+  clli: MyString
+  npa: MyString
+  rate_center: MyString
+  locality: MyString
+  county: MyString
+  sub_profile_id: MyString
+  vma: MyString
+  created_by: MyString
+  last_update_by: MyString
+  division_id: MyString
+  reference1: MyString
+  serviceable: MyString
+  tgn_911: MyString
+  state: MyString
+  suspend_id: MyString
+  vma_customer: MyString
+  routing_indicator_rule: MyString
+  poi: MyString
+  vma_99: MyString
+  lrn: MyString
+  seasonal_id: MyString
+  i2: MyString
+  esrn: MyString
+  lata: MyString
+  spid: MyString
+  nat_num_esrn: MyString
