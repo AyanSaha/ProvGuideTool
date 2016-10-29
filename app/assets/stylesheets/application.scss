@@ -1,22 +1,50 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import "font-awesome";
-
-.login-body{
-	
-background: image-url('bg.png') no-repeat center center fixed; 
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;	
-
-}
+@import "sessions.scss";
 body {
 	background-color: #EAEDED;
-    padding-bottom: 40px;
+    //padding-bottom: 40px;
 
     
 }
+.logo
+{   padding: -5px;
+    margin: 5px;
+    width: auto;
+    height:auto;
+    float: left;
+}
+.pic
+{
+	
+    height:100vh;
+    background: image-url('bg.png') no-repeat center center fixed; 
+     background-attachment: fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+     background-size: cover;	
+
+}
+.logo_container {
+    background: url('ProvGuideLogo.png') scroll no-repeat top center transparent;
+    margin-top: 10px;
+    margin-bottom: 25px;
+    text-indent: -119988px;
+    overflow: hidden;
+    text-align: left;
+    height: 70px;
+    width: auto;
+    }
+
+
+
+
+
+
+	
+
 
 .sidebar-nav-fixed {
 	width:14%;
