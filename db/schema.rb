@@ -12,7 +12,7 @@
 
 ActiveRecord::Schema.define(version: 20161028172709) do
 
-  create_table "prov_guide_temps", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
+  create_table "prov_guide_temps", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "dialplan"
     t.string   "clli"
     t.string   "npa"
