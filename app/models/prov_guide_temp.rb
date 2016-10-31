@@ -15,15 +15,17 @@ class ProvGuideTemp < ApplicationRecord
   		end
   (2..spreadsheet.last_row).each do |i|
     row = Hash[[header, spreadsheet.row(i)].transpose]
-    provguidetemp = ProvGuideTemp.find_by_dialplan_and_clli_and_rate_center_and_npa_and_locality(row["dialplan"],row["clli"],row["rate_center"],row["npa"],row["locality"])
+    provguidetemp = ProvGuideTemp.find_by_dialplan_and_clli_and_rate_center_and_npa_and_locality_and_county(row["dialplan"],row["clli"],row["rate_center"],row["npa"],row["locality"],row["county"])
+    binding.pry
     if provguidetemp.nil?
+        provguidetemp=ProvGuideTemp.new
        provguidetemp.attributes = row.to_hash
        provguidetemp.created_by='asaha005c'
       provguidetemp.last_update_by='asaha005c'
       provguidetemp.save!
       return true,message
     else
-      message="Composite constraints on first 5 columns violated"
+      message="Composite constraints on first 6 columns violated"
       return false,message
    end
 

@@ -24,6 +24,7 @@ gem 'coffee-rails', '~> 4.2'
 gem 'roo'
 gem 'axlsx'
 gem 'axlsx_rails'
+gem 'dropzonejs-rails'
 gem 'composite_primary_keys','=9.0.4'
 # Use jquery as the JavaScript library
 gem 'jquery-rails'

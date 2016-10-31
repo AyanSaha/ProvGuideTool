@@ -2,8 +2,10 @@
 @import "bootstrap";
 @import "font-awesome";
 @import "sessions.scss";
+@require "dropzone/basic";
+@require "dropzone/dropzone";
 body {
-	background-color: #EAEDED;
+	//background-color: #EAEDED;
     //padding-bottom: 40px;
 
     
