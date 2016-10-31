@@ -3,47 +3,98 @@
 <div class="box" style='padding-left: 30%;'>
   <div class="row">
 
-<h2>Import Products</h2>
+  <h2>Import Products</h2>
 
-<%= form_tag import_prov_guide_details_path,multipart: true do %>
+   <%= form_tag import_prov_guide_details_path,multipart: true do %>
   <%= file_field_tag :file %>
   <%= submit_tag "Import" %>
 <% end %>
 </div>
-<script type="text/javascript">
-	Dropzone.autoDiscover = false;
 
-var headlineDropzone = new Dropzone("#upload-dropzone", {
+
+
+
+<div id="upload-dropzone" class="dropzone">
+	
+<%= form_tag import_prov_guide_details_path,multipart: true do %>
+
+<%end %>
+<div id="msgBoard"></div>
+      <br>
+</div>
+  </div>
+      <!-- This <div> elements shows a suitable message after a successful upload. -->
+  <script>
+  var AUTH_TOKEN=$('meta[name="csrf-token"]').attr('content');
+  Dropzone.autoDiscover = false;
+
+$("#upload-dropzone").dropzone({
 
   url: "/prov_guide_details/import", // You can override url of form in here.
 
   maxFilesize: 5, // in MB
 
-  parallelUploads: 1,
+  parallelUploads: 2,
+  addRemoveLinks : true,
 
-  acceptedFiles:'.xlsx, .xlx, .csv, ', // type of files
+  acceptedFiles:'.csv, .xlsx, .xls', // type of files
+
+  params:{
+      'authenticity_token':  AUTH_TOKEN
+    },
 
   init: function(){
-
+      
     this.on('addedfile', function(file) {
 
       // Called when a file is added to the list.
-
+      alert("file added!!");
+      console.log(file);
     });
 
     this.on('sending', function(file, xhr, formData) {
 
       // Called just before each file is sent.
-
+      
+      console.log(formData);
+      console.log(xhr);
     });
 
     this.on('success', function(file, json) {
 
-      alert('File uploaded');
-
+      // Called when file uploaded successfully.
+      location.reload();
+      
     });
 
   }
 
-});
+});    
+      
 </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

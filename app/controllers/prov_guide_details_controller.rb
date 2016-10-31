@@ -13,18 +13,19 @@ class ProvGuideDetailsController < ApplicationController
 	end
 
 	def import
+
 		if validate_format(params[:file])
 			
        		@imported=ProvGuideTemp.import(params[:file])
        		msg=@imported[1]
        		if @imported.include?true
-         		redirect_to root_url,notice: msg
+         		redirect_to :back,notice: msg
 
         	else
-          		redirect_to root_url,alert: msg
+          		redirect_to :back,alert: msg
        		end
     	else 
-       		redirect_to root_url,alert:"Wrong file type!Please upload in .csv ,.xls and .xlxs"
+       		redirect_to :back,alert:"Wrong file type!Please upload in .csv ,.xls and .xlxs"
 		end
  	end
 	

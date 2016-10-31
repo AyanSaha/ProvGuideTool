@@ -13,10 +13,12 @@ class ProvGuideTemp < ApplicationRecord
      		message="Columns must be 25!!Wrong format sheet uploaded!!"
     		return false,message
   		end
+  unless spreadsheet.row(2).nil?
   (2..spreadsheet.last_row).each do |i|
     row = Hash[[header, spreadsheet.row(i)].transpose]
+    
     provguidetemp = ProvGuideTemp.find_by_dialplan_and_clli_and_rate_center_and_npa_and_locality_and_county(row["dialplan"],row["clli"],row["rate_center"],row["npa"],row["locality"],row["county"])
-    binding.pry
+    
     if provguidetemp.nil?
         provguidetemp=ProvGuideTemp.new
        provguidetemp.attributes = row.to_hash
@@ -31,6 +33,9 @@ class ProvGuideTemp < ApplicationRecord
 
    
    end
+ end
+ message="First row is empty or sheet uploaded does not content data"
+ return false,message
  end
    def self.open_spreadsheet(file)
    	
