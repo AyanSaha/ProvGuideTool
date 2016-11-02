@@ -1,0 +1,56 @@
+
+
+<table class="table table-bordered" id="users-table",data-source="<%= prov_guide_details_path(format: :json) %>">
+  <thead>
+    <tr>
+      <th>Dialplan</th>
+      <th>CLLI</th>
+      <th>NPA</th>
+      <th>RateCenter</th>
+      <th>County</th>
+      <th>Locality</th>
+      <th>SubProfileId</th>
+      <th>VMA</th>
+      <th>Create By</th>
+      <th>Last Update By</th>
+      <th>Reference1</th>
+      <th>Serviceable</th>
+      <th>TGN_911</th>
+      <th>State</th>
+      <th>Suspend_Id</th>
+      <th>VMA_Customer</th>
+      <th>Routing Indicator Rule</th>
+      <th>POI</th>
+      <th>VMA_99</th>
+      <th>LRN</th>
+      <th>Seasonal_Id</th>
+      <th>I2</th>
+      <th>ESRN</th>
+      <th>LATA</th>
+      <th>SPID</th>
+      <th>NAT_NUM_ESRN</th>
+      <th>Creation Date</th>
+      <th>Last Udate</th>
+    </tr>
+  </thead>
+  <tbody>
+  </tbody>
+</table>
+
+
+<script>
+   $(function() {
+
+  $('#users-table').dataTable({
+    reponsive: true,
+    autoFill: true,
+    fixHeader: true,
+    ajax: $("#users-table").data("source"),
+    autoWidth: true,
+    pagingType: 'simple_numbers',
+    processing: true,
+    serverSide: true,
+    columnDefs: [{orderable: false, targets: [1]}] 
+  });
+});
+</script>

@@ -1,8 +1,16 @@
 class ProvGuideDetailsController < ApplicationController
-	 
+	
+def index
+  respond_to do |format|
+      format.html
+      format.json { render json: ProvGuidesDatatable.new(view_context) }
+    end
+end
+
 	def new
 
 	end
+
 	
 	def create
 
